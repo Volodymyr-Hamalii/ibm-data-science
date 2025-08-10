@@ -1,5 +1,4 @@
 from pydantic import BaseModel
-from typing import List, Dict
 
 class Location(BaseModel):
     lon: float
@@ -9,8 +8,8 @@ class Hotel(BaseModel):
     id: str
     title: str
     description: str
-    amenities: Dict[str, List[str]]
+    amenities: dict[str, list[str]]
     location: Location
-    highlights: List[str]
-    local_tips: List[str]
+    highlights: list[str]
+    local_tips: list[str]
     url: str

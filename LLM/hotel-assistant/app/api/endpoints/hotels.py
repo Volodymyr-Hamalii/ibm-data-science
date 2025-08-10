@@ -1,5 +1,5 @@
 from fastapi import APIRouter, Query
-from app.services.rag_service import recommend_hotels, check_elasticsearch_status
+from app.services.rag_service import recommend_hotels
 from app.models.hotel import Hotel
 
 router = APIRouter()
@@ -22,7 +22,7 @@ async def debug_elasticsearch():
         health_status = "unknown"
         if health_response.status_code == 200:
             health_data = health_response.json()
-            health_status = health_data.get('status', 'unknown')
+            health_status = health_data.get("status", "unknown")
         
         # Check index info
         index_response = requests.get(f"{settings.ES_URL}/{settings.ES_INDEX}")
@@ -31,8 +31,8 @@ async def debug_elasticsearch():
             index_data = index_response.json()
             index_info = {
                 "exists": True,
-                "document_count": index_data[settings.ES_INDEX]['total']['docs']['count'],
-                "size": index_data[settings.ES_INDEX]['total']['store']['size_in_bytes']
+                "document_count": index_data[settings.ES_INDEX]["total"]["docs"]["count"],
+                "size": index_data[settings.ES_INDEX]["total"]["store"]["size_in_bytes"]
             }
         else:
             index_info = {
