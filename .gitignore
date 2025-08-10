@@ -1,5 +1,9 @@
 .ipynb_checkpoints
 .virtual_documents
-venv-ds
 .DS_Store
 ML/env
+.env
+__pycache__
+
+venv-ds
+venv

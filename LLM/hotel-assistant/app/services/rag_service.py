@@ -177,7 +177,10 @@ def recommend_hotels_direct(query: str, top_k: int = 5) -> list[Hotel]:
             
             # Extract data from the document
             basics = doc.get("basics", {})
-            amenities = doc.get("amenities", {})
+            amenities = {
+                key: value for key, value in doc.get("amenities", {}).items()
+                if value
+            }
             all_locations = doc.get("allLocations", [])
             
             # Handle location data
