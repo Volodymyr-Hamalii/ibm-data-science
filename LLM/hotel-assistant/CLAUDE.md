@@ -5,6 +5,7 @@
 This project is an AI-powered hotel recommendation assistant built with **FastAPI**, **Elasticsearch**, and a **Retrieval-Augmented Generation (RAG)** pipeline. It allows users to search for hotels using natural language queries. The system returns relevant hotel recommendations based on semantic search over hotel descriptions and features.
 
 The goal is to gain practical experience with:
+
 - FastAPI for microservice architecture
 - RAG pipelines using vector embeddings and LLMs
 - Elasticsearch for vector similarity search
@@ -33,20 +34,19 @@ hotel-assistant/
 ├── Dockerfile # App containerization
 ├── requirements.txt # Python dependencies
 
-
 ---
 
 ## ⚙️ Technologies & Libraries
 
-| Layer | Tools |
-|-------|-------|
-| API Framework | FastAPI |
-| Vector Store | Elasticsearch (dense_vector + cosine similarity) |
-| Embeddings | OpenAI (`text-embedding-3-small`) or HuggingFace |
-| RAG Orchestration | LangChain |
-| LLM Interface | Claude (for generation), OpenAI (for embedding) |
-| Auth | Basic Auth for Elasticsearch |
-| Config | `pydantic_settings` with `.env` loading |
+| Layer             | Tools                                            |
+| ----------------- | ------------------------------------------------ |
+| API Framework     | FastAPI                                          |
+| Vector Store      | Elasticsearch (dense_vector + cosine similarity) |
+| Embeddings        | OpenAI (`text-embedding-3-small`) or HuggingFace |
+| RAG Orchestration | LangChain                                        |
+| LLM Interface     | Claude (for generation), OpenAI (for embedding)  |
+| Auth              | Basic Auth for Elasticsearch                     |
+| Config            | `pydantic_settings` with `.env` loading          |
 
 ---
 
@@ -91,3 +91,4 @@ Claude can assist with:
 ES_URL=http://localhost:9200
 ES_INDEX=hotels
 OPENAI_API_KEY=openai_key
+```
